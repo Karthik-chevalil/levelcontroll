@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Level Controll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-layer">
+            <div id="home-screen" class="screen active">
+                <h1>LEVEL CONTROLL</h1>
+                <div class="menu-btns">
+                    <button id="start-btn">PLAY</button>
+                    <button id="stats-btn">STATS</button>
+                </div>
+                <p class="instructions">Arrows / WASD to Move<br>Space to Jump</p>
+            </div>
+            <div id="level-select-screen" class="screen hidden">
+                <h2>SELECT LEVEL</h2>
+                <div id="level-grid"></div>
+                <button id="back-to-home-btn">BACK</button>
+            </div>
+            <div id="stats-screen" class="screen hidden">
+                <h2>USELESS STATS</h2>
+                <div class="stats-container">
+                    <div class="stat-item">Time Wasted: <span id="stat-time">0m 0s</span></div>
+                    <div class="stat-item">Total Failures: <span id="stat-deaths">0</span></div>
+                    <div id="stat-troll-msg">You haven't even started failing yet.</div>
+                </div>
+                <button id="stats-back-btn">GO BACK</button>
+            </div>
+            <div id="hud" class="screen hidden">
+                <div id="level-indicator">Level 1</div>
+                <div id="death-counter">Deaths: 0</div>
+                <button id="pause-btn">||</button>
+            </div>
+            <div id="popup-message" class="hidden">Troll Message</div>
+            <div id="pause-screen" class="screen hidden">
+                <h2>PAUSED</h2>
+                <button id="resume-btn">RESUME</button>
+                <button id="menu-btn">MENU</button>
+            </div>
+            <div id="win-screen" class="screen hidden">
+                <h2>LEVEL COMPLETE!</h2>
+                <button id="next-level-btn">NEXT LEVEL</button>
+            </div>
+            <div id="cheat-console" class="hidden">
+                <div class="console-box">
+                    <h3>SYSTEM ACCESS</h3>
+                    <input type="text" id="cheat-input" placeholder="Enter command..." autocomplete="off">
+                    <div class="console-btns">
+                        <button id="cheat-run-btn">EXECUTE</button>
+                        <button id="cheat-close-btn">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="touch-controls">
+            <div class="movement-btns">
+                <div class="touch-btn" id="left-btn">←</div>
+                <div class="touch-btn" id="right-btn">→</div>
+            </div>
+            <div class="touch-btn" id="jump-btn">↑</div>
+        </div>
+    </div>
+
+    <div id="orientation-warning">
+        <div class="warning-content">
+            <div class="phone-icon">📱</div>
+            <p>PLEASE ROTATE YOUR DEVICE</p>
+            <span>Landscape mode is required for the best experience</span>
+        </div>
+    </div>
+
+    <div id="music-troll-container" style="display: none;"></div>
+
+    <!-- Game Scripts -->
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
